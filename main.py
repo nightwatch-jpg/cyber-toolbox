@@ -1,4 +1,4 @@
-from tools import PortScanner, SiteRecon
+from tools import PortScanner, SiteRecon, PasswordChecker
 
 def main():
     while True:
@@ -7,10 +7,11 @@ def main():
         print("="*30)
         print("1. Сканер портов")
         print("2. Аудитор безопасности сайта")
-        print("3. Выход")
+        print("3. Проверка пароля")
+        print("4. Выход")
         print("="*30)
 
-        choice = input("Выбери (1-3): ")
+        choice = input("Выбери (1-4): ")
 
         if choice == "1":
             ip = input("Введите IP: ")
@@ -23,7 +24,12 @@ def main():
             recon.analyze()
 
         elif choice == "3":
-            print("Выход...")
+            pwd = input(("Введите пароль для проверки: "))
+            checker = PasswordChecker()
+            checker.check(pwd)
+
+        elif choice == "4":
+            print("Выход")
             break
 
 if __name__ == "__main__":
