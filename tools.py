@@ -51,3 +51,17 @@ class SiteRecon():
                 print("⚠️ HSTS отсутствует (уязвимость!)")
         except:
             print("Ошибка подключения!")
+
+class PasswordChecker:
+    def __init__(self):
+        self.bad_passwords = ["123456", "qwerty", "admin", "password", "12345"]
+
+    def check(self, password):
+        print(f"\n🔍 Проверяю пароль: {password}")
+        if password in self.bad_passwords:
+            print("⚠️ ВНИМАНИЕ! Этот пароль есть в базе утечек! (Очень плохой)")
+        else:
+            print("✅ Пароль не найден в базе популярных утечек.")
+
+        if len(password) < 8:
+            print("⚠️ Пароль слишком короткий (меньше 8 символов).")
