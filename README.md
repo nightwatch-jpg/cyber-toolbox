@@ -13,6 +13,7 @@ My first cybersecurity tool, written in Python.
  pip install requests
 python main.py
 
-👨‍💻 Author:
+
+## 👨‍💻 Author:
 nightwatch-jpg
 Beginner cybersecurity specialist.
